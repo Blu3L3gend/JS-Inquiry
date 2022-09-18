@@ -1,51 +1,41 @@
 // Addition
+function add(num1, num2) {
+  let sum = num1 + num2;
+  return sum;
+}
 
-const add = function (num1, num2) {
-  return num1 + num2;
-};
+function subtract(num1, num2) {
+  let difference = num1 - num2;
+  return difference;
+}
 
-// Subtraction
+function multiply(num1, num2) {
+  let product = num1 * num2;
+  return product;
+}
 
-var subtract = function (num1, num2) {
-  return num1 - num2;
-};
+function divide(num1, num2) {
+  let quotient = num1 / num2;
+  return quotient;
+}
 
-// Multiplying
-
-var multiply = function (num1, num2) {
-  return num1 * num2;
-};
-
-// Division
-
-var divide = function (num1, num2) {
-  return num1 / num2;
-};
-
-var number1 = Number(prompt("What's first number?")); // Changes from string to number
-
-var number2 = Number(prompt("What's second number?"));
-
-var operator = prompt("What's your operator?");
-
-var checkOperator = function (operator, number1, number2) {
-  if (operator == "+") {
-    return add(number1, number2);
-  } else if (operator == "-") {
-    subtract(number1, number2);
-  } else if (operator == "*") {
-    multiply(number1, number2);
+function operators(operator, num1, num2) {
+  if (operator == "*") {
+    // if using * you are multiplying num1 and num 2
+    alert(num1 + "*" + num2 + "=" + multiply(num1, num2));
+  } else if (operator == "+") {
+    // if using + you are adding num1 and num 2
+    alert(num1 + "+" + num2 + "=" + add(num1, num2));
   } else if (operator == "/") {
-    divide(number1, number2);
-  } else {
-    alert("You didnt put a valid operator");
+    //if using / lets then alerts that you are dividing num 1 and 2
+    alert(num1 + "/" + num2 + "=" + divide(num1, num2));
+  } else if (operator == "-") {
+    //if using - you are subtracting num 1 and 2
+    alert(num1 + "-" + num2 + "=" + divide(num1, num2));
   }
-};
+}
 
-console.log(
-  `${number1} ${operator} ${number2} = ${checkOperator(
-    operator,
-    number1,
-    number2
-  )}`
-);
+let num1 = prompt("Choose your First Number");
+let num2 = prompt("Now Choose your Second Number");
+let operator = prompt("Choose your Operator");
+operators(operator, num1, num2);
